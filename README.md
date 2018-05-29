@@ -1,5 +1,5 @@
-# Help-Text-Control-using-WPF
-This WPF control will show the HTML text on hover of the image. It can be used to show information of the page and in rich text.
+# WPF-help-text-control
+This WPF control will show the HTML text on hover of the image. It can be used to show information of the page in rich text.
 
 The tooltip display will adjust according to the text length.
 

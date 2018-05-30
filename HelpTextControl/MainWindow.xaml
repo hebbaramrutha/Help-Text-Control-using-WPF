@@ -1,0 +1,33 @@
+﻿<Window x:Class="HelpTextControl.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HelpTextControl"
+        xmlns:HelpControl ="clr-namespace:HelpTextControl.HelpText"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Label Content="HelpText with large content"/>
+        <HelpControl:HelpTextUC ToolTipHorizontalOffset="-50" ToolTipVerticalOffset="-30" ToolTipWidth="185" Margin="0,0,0,0" 
+                                ToolTipText="This control will display the tooltip text. Hover over the icon to see the text." 
+                                VerticalAlignment="Center" HorizontalAlignment="Center">
+            </HelpControl:HelpTextUC>
+
+        <Label Content="HelpText with bold content" Grid.Row="1"/>
+        <HelpControl:HelpTextUC ToolTipHorizontalOffset="-50" ToolTipVerticalOffset="-30" ToolTipWidth="185" Margin="0,0,0,0" 
+                                x:Name="HelpTextBoldFont" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1">
+        </HelpControl:HelpTextUC>
+
+        <Label Content="Right aligned HelpText control" Grid.Row="2"/>
+        <HelpControl:HelpTextUC ToolTipHorizontalOffset="-50" ToolTipVerticalOffset="-30" ToolTipWidth="185" Margin="0,0,50,50" 
+                                ToolTipText="This control is right aligned." 
+                                HorizontalAlignment="Right" Grid.Row="2">
+        </HelpControl:HelpTextUC>
+    </Grid>
+</Window>

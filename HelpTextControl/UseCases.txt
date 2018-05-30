@@ -1,0 +1,3 @@
+﻿1) On hover of the image, the tooltip text should be displayed.
+2) If the tooltip text is large, the control should fit the text in the give width.
+3) The control should be able to display any text that is bold or italic. 

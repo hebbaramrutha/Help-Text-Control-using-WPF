@@ -1,0 +1,39 @@
+﻿<UserControl x:Class="HelpTextControl.HelpText.HelpTextUC"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:HelpTextControl.HelpText"
+             xmlns:Converter="clr-namespace:HelpTextControl.HelpText.ValueConverters"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="..\HelpText\Resources\Styles\BaseDictionary.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="..\HelpText\Resources\Styles\ButtonControlsDictionary.xaml"></ResourceDictionary>
+                <!--<ResourceDictionary Source="..\HelpText\Resources\Styles\FieldTextControls.xaml"></ResourceDictionary>-->
+                <ResourceDictionary>
+                    <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+                    <Converter:InverseBooleanToVisibilityConverter x:Key="InverseBooleanToVisibilityConverter" />
+                </ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Image Name="HelpIcon" MouseEnter="HelpIcon_MouseEnter"  MouseLeave="HelpIcon_MouseLeave" Source="..\HelpText\Resources\Images\NewHelp.png" 
+               HorizontalAlignment="Right" Margin="0,0,20,0" Height="16">
+        </Image>
+        <Popup Name="Tooltippop" Height="Auto" MaxWidth="500" AllowsTransparency="True" Placement="Bottom" >
+            <StackPanel Name="TooltipStackPanel" MaxWidth="500" Background="Transparent" Orientation="Vertical" VerticalAlignment="Top">
+                <TextBlock Name="TooltipTxt" Visibility="Hidden" TextWrapping="Wrap"/>
+                <RichTextBox Background="LightGray" MaxWidth="140" Converter:HtmlRichTextBoxBehavior.Text="{Binding ElementName=TooltipTxt,
+		                                                  Path=Text,UpdateSourceTrigger=PropertyChanged}" Padding="5" >
+
+                </RichTextBox>
+            </StackPanel>
+        </Popup>
+    </Grid>
+
+</UserControl>
